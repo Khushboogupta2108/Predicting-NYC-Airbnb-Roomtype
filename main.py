@@ -3,7 +3,7 @@ import pandas as pd
 from pydantic import BaseModel, Field
 import joblib
 from fastapi.middleware.cors import CORSMiddleware
-
+from huggingface_hub import hf_hub_download
 
 app = FastAPI()
 
@@ -19,8 +19,12 @@ COLUMNS = ["latitude", "longitude", "price", "minimum_nights",
     "number_of_reviews", "reviews_per_month",
     "calculated_host_listings_count", "availability_365",
     "neighbourhood_group", "neighbourhood",]
+model_path = hf_hub_download(
+    repo_id="Khushboogupta21/nyc-airbnb-room-type-model",
+    filename="Model_pipeline.pkl"
+)
 
-model = joblib.load("Model_Pipeline.pkl")  
+model = joblib.load(model_path)
 
 class Features(BaseModel):
     latitude: float = Field(..., ge=-90, le=90, description="Latitude coordinate")
