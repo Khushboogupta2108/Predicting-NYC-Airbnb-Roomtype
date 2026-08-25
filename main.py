@@ -39,10 +39,12 @@ class Features(BaseModel):
     neighbourhood: str = Field(..., min_length=1, description="Specific neighbourhood name")
 
 
-
-@app.get('/')
-def greet():
-    return "Hello Guyss"
+@app.get("/")
+def home():
+    return {
+        "message": "NYC Airbnb House Type Classification API",
+        "docs": "/docs"
+    }
 
 
 @app.post('/predict')
