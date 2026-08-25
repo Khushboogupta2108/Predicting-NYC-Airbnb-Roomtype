@@ -6,6 +6,7 @@ The project includes data preprocessing, feature transformation, model training,
 
 ## Live Demo
 
+**FRONTEND URL:** https://predicting-nyc-airbnb-roomtype-2.onrender.com/
 **Live API:** https://predicting-nyc-airbnb-roomtype-1.onrender.com/
 
 **API Documentation:** https://predicting-nyc-airbnb-roomtype-1.onrender.com/docs
